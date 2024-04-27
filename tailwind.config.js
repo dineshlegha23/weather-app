@@ -22,6 +22,9 @@ export default {
       animation: {
         "ripple-animation": "ripple 1s ease 1 forwards",
       },
+      colors: {
+        gray: "#3E3D40",
+      },
     },
   },
   plugins: [],
