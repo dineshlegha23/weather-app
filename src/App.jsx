@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import LeftPanel from "./components/LeftPanel";
 import Main from "./components/Main";
 
 const App = () => {
