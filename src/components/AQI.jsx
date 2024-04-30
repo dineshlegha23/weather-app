@@ -11,7 +11,7 @@ const AQI = () => {
           Fair
         </span>
       </div>
-      <div className="flex items-center gap-5 mt-5">
+      <div className="flex items-center justify-between gap-5 mt-5">
         <MdOutlineAir size={40} />
         <AQIFlexCol type={"PM25"} value={"16.4"} />
         <AQIFlexCol type={"SO2"} value={"9.06"} />

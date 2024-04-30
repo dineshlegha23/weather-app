@@ -7,10 +7,8 @@ import SunriseSetFlex from "./SunriseSetFlex";
 const SunRise = () => {
   return (
     <div className="bg-black/40 py-3 px-4 rounded-2xl mt-3">
-      <div className="flex justify-between text-sm">
-        <p className="text-white/50">Sunrise & Sunset</p>
-      </div>
-      <div className="flex gap-5">
+      <p className="text-white/50 text-sm">Sunrise & Sunset</p>
+      <div className="flex gap-5 justify-between">
         <SunriseSetFlex
           img={<IoSunnyOutline size={40} />}
           type={"Sunrise"}

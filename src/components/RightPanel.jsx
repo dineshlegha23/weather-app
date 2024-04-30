@@ -4,7 +4,7 @@ import HourlyForecast from "./HourlyForecast";
 
 const RightPanel = () => {
   return (
-    <div>
+    <div className="w-full">
       <TodayHighlight />
       <HourlyForecast />
     </div>
