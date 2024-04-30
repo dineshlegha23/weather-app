@@ -1,12 +1,12 @@
 import React from "react";
 import TodayHighlight from "./TodayHighlight";
-import HourlyForecast from "./HourlyForecast";
+import TodayAt from "./TodayAt";
 
 const RightPanel = () => {
   return (
-    <div className="w-full">
+    <div>
       <TodayHighlight />
-      <HourlyForecast />
+      <TodayAt />
     </div>
   );
 };

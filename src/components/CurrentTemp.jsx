@@ -5,12 +5,12 @@ import cloudLogo from "../images/weather_icons/04n.png";
 
 const CurrentTemp = () => {
   return (
-    <section className="w-72">
+    <section>
       <div className="bg-gray rounded-2xl p-5">
-        <div className="">
+        <div>
           <p>Now</p>
           <div className="flex justify-between items-center">
-            <span className="text-6xl">
+            <span className="text-6xl brightness-200">
               5<sup>o</sup>c
             </span>
             <i className="w-16 mr-10">

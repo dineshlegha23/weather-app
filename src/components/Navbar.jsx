@@ -6,7 +6,7 @@ import logo from "../images/logo.png";
 const Navbar = () => {
   const [search, setSearch] = useState("");
   return (
-    <nav className="flex justify-between items-center py-5">
+    <nav className="flex justify-between items-center py-5 mx-auto max-w-7xl">
       <i className="w-48">
         <img src={logo} alt="logo" />
       </i>
