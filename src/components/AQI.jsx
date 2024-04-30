@@ -11,12 +11,14 @@ const AQI = () => {
           Fair
         </span>
       </div>
-      <div className="flex items-center justify-between gap-5 mt-5">
+      <div className="flex items-center gap-5">
         <MdOutlineAir size={40} />
-        <AQIFlexCol type={"PM25"} value={"16.4"} />
-        <AQIFlexCol type={"SO2"} value={"9.06"} />
-        <AQIFlexCol type={"NO2"} value={"36.0"} />
-        <AQIFlexCol type={"O3"} value={"71.5"} />
+        <div className="flex items-center justify-between gap-5 mt-5 flex-wrap">
+          <AQIFlexCol type={"PM25"} value={"16.4"} />
+          <AQIFlexCol type={"SO2"} value={"9.06"} />
+          <AQIFlexCol type={"NO2"} value={"36.0"} />
+          <AQIFlexCol type={"O3"} value={"71.5"} />
+        </div>
       </div>
     </div>
   );

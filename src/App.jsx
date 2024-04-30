@@ -4,7 +4,7 @@ import Main from "./components/Main";
 
 const App = () => {
   return (
-    <div className="px-6 max-w-8xl mx-auto">
+    <div className="px-6 max-w-8xl mb-5">
       <Navbar />
       <Main />
     </div>

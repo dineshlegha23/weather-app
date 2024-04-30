@@ -6,7 +6,7 @@ const RightPanel = () => {
   return (
     <div>
       <TodayHighlight />
-      <TodayAt />
+      {/* <TodayAt /> */}
     </div>
   );
 };
