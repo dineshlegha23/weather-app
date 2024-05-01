@@ -15,7 +15,7 @@ const TodayHighlight = () => {
         <AQI />
         <SunRise />
       </div>
-      <div className="mt-5 grid grid-cols-4 gap-5 [@media(max-width:980px)]:grid-cols-2 md:grid-cols-1">
+      <div className="mt-5 grid grid-cols-4 gap-5 min-[980px]:grid-cols-2 sm:grid-cols-1">
         <ExtraDetails
           text={"Humidity"}
           value={"70"}
