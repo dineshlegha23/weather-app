@@ -5,7 +5,7 @@ import SunriseSetFlex from "./SunriseSetFlex";
 
 const SunRise = () => {
   return (
-    <div className="bg-black/40 py-3 px-4 rounded-2xl mt-3 w-fit md:col-span-2">
+    <div className="bg-black/40 py-3 px-4 rounded-2xl mt-3 md:col-span-2 w-full">
       <p className="text-white/50 text-sm">Sunrise & Sunset</p>
       <div className="flex gap-5 justify-between flex-wrap md:justify-center">
         <SunriseSetFlex

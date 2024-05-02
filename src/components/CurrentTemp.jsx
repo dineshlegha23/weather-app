@@ -13,7 +13,7 @@ const CurrentTemp = () => {
             <span className="text-6xl brightness-200">
               5<sup>o</sup>c
             </span>
-            <i className="w-16 mr-10">
+            <i className="w-16 mx-5">
               <img src={cloudLogo} alt="cloud logo" />
             </i>
           </div>
