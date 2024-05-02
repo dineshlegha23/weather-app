@@ -4,8 +4,15 @@ export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
   const [city, setCity] = useState("delhi");
+  const [coordinates, setCoordinates] = useState({});
+  const [cities, setCities] = useState([]);
+  console.log(coordinates);
   return (
-    <Context.Provider value={{ city, setCity }}>{children}</Context.Provider>
+    <Context.Provider
+      value={{ city, setCity, cities, setCities, coordinates, setCoordinates }}
+    >
+      {children}
+    </Context.Provider>
   );
 };
 

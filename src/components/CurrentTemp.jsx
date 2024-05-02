@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CiCalendar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import cloudLogo from "../images/weather_icons/04n.png";
 
 const CurrentTemp = () => {
+  async function fetchData() {
+    const response = await fetch(
+      "https://api.openweathermap.org/data/2.5/weather?lat=23.7644025&lon=90.38901&units=metric&appid=1fd671326afdca28081228497ae0615f"
+    );
+    const data = await response.json();
+    console.log(data);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <section>
       <div className="bg-gray rounded-2xl p-5">
