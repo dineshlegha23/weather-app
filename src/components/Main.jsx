@@ -4,7 +4,7 @@ import RightPanel from "./RightPanel";
 
 const Main = () => {
   return (
-    <div className="flex gap-10 mt-8 justify-center [@media(max-width:550px)]:flex-col [@media(max-width:550px)]:px-5">
+    <div className="flex gap-10 mt-8 justify-center [@media(max-width:550px)]:flex-col">
       <LeftPanel />
       <RightPanel />
     </div>
