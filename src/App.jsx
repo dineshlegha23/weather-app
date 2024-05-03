@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
-import { useWeatherContext } from "./context/context";
 
 const App = () => {
   return (

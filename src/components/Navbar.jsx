@@ -55,7 +55,7 @@ const Navbar = () => {
                 onClick={(e) => {
                   setCoordinates({ lat: city.lat, lon: city.lon });
                   setSelectedCity(`${city.name}, ${city.country}`);
-                  setCity(city.name);
+                  setCity(city.name + " " + city.country);
                   setTouched(false);
                 }}
                 key={index}
