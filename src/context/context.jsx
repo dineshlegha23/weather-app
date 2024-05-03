@@ -4,12 +4,28 @@ export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
   const [city, setCity] = useState("delhi");
-  const [coordinates, setCoordinates] = useState({});
+  const [selectedCity, setSelectedCity] = useState("");
+  const [coordinates, setCoordinates] = useState({
+    lat: "28.6517178",
+    lon: "77.2219388",
+  });
   const [cities, setCities] = useState([]);
-  console.log(coordinates);
+  const [currentTemp, setCurrentTemp] = useState([]);
+
   return (
     <Context.Provider
-      value={{ city, setCity, cities, setCities, coordinates, setCoordinates }}
+      value={{
+        city,
+        setCity,
+        cities,
+        setCities,
+        coordinates,
+        setCoordinates,
+        currentTemp,
+        setCurrentTemp,
+        selectedCity,
+        setSelectedCity,
+      }}
     >
       {children}
     </Context.Provider>

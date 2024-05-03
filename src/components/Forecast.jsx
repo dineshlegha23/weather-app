@@ -1,7 +1,7 @@
 import React from "react";
-import cloud1 from "../images/weather_icons/04d.png";
-import cloud2 from "../images/weather_icons/13d.png";
-import cloud3 from "../images/weather_icons/02d.png";
+import cloud1 from "/images/weather_icons/04d.png";
+import cloud2 from "/images/weather_icons/13d.png";
+import cloud3 from "/images/weather_icons/02d.png";
 import SingleDayForecast from "./SingleDayForecast";
 
 const Forecast = () => {
