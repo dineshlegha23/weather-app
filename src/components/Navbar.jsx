@@ -16,7 +16,6 @@ const Navbar = () => {
     );
     const data = await response.json();
     setCities(data);
-    console.log(data);
   };
 
   useEffect(() => {
