@@ -1,10 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import cloud1 from "/images/weather_icons/04d.png";
 import cloud2 from "/images/weather_icons/13d.png";
 import cloud3 from "/images/weather_icons/02d.png";
 import SingleDayForecast from "./SingleDayForecast";
+import { useWeatherContext } from "../context/context";
 
 const Forecast = () => {
+  const weekDayNames = ["Sun", "Mon", "Tue", "Thu", "Fri", "Sat"];
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const { coordinates, forecast, setForecast } = useWeatherContext();
+  const { lat, lon } = coordinates;
+
+  async function fetchData() {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=1fd671326afdca28081228497ae0615f`
+    );
+    const data = await response.json();
+    setForecast(data);
+    console.log(forecast);
+    // console.log(date);
+  }
+
+  // const dtUnix=forecast?.city?.timezone
+  // const date = new Date();
+  // const date = new Date(19800 + 1714915714 * 1000);
+
+  useEffect(() => {
+    fetchData();
+  }, [coordinates]);
+
   return (
     <div className="bg-gray rounded-2xl p-5">
       <div className="flex flex-col gap-5">

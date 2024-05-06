@@ -4,8 +4,15 @@ import { FaLocationDot } from "react-icons/fa6";
 import { useWeatherContext } from "../context/context";
 
 const CurrentTemp = () => {
-  const { coordinates, currentTemp, setCurrentTemp, selectedCity } =
-    useWeatherContext();
+  const {
+    coordinates,
+    currentTemp,
+    setTimeZone,
+    setCurrentTemp,
+    selectedCity,
+    setSunRise,
+    setSunSet,
+  } = useWeatherContext();
   const { lat, lon } = coordinates;
 
   async function fetchData() {
@@ -14,7 +21,6 @@ const CurrentTemp = () => {
     );
     const data = await response.json();
     setCurrentTemp(data);
-    console.log(data);
   }
 
   const tempDesc = currentTemp?.weather?.[0]?.description;
@@ -37,7 +43,7 @@ const CurrentTemp = () => {
           <p>Now</p>
           <div className="flex justify-between items-center">
             <span className="text-6xl brightness-200">
-              {temp?.toFixed(1)}
+              {temp && String(temp).includes(".") ? temp.toFixed(1) : temp}
               <sup>o</sup>c
             </span>
             <i className="w-16 mx-5">

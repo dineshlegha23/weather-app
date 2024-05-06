@@ -11,6 +11,7 @@ const ContextProvider = ({ children }) => {
   });
   const [cities, setCities] = useState([]);
   const [currentTemp, setCurrentTemp] = useState([]);
+  const [forecast, setForecast] = useState();
 
   return (
     <Context.Provider
@@ -25,6 +26,8 @@ const ContextProvider = ({ children }) => {
         setCurrentTemp,
         selectedCity,
         setSelectedCity,
+        forecast,
+        setForecast,
       }}
     >
       {children}
