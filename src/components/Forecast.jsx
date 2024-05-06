@@ -34,7 +34,8 @@ const Forecast = () => {
     console.log(forecast);
   }
 
-  // console.log(new Date(19800 + 1715018400 * 1000).getUTCHours());
+  const date = new Date(19800 + 1715029200 * 1000).getUTCHours();
+  console.log(date);
 
   useEffect(() => {
     fetchData();
