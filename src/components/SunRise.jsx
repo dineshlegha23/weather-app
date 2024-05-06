@@ -6,23 +6,13 @@ import { useWeatherContext } from "../context/context";
 
 const SunRise = () => {
   const { currentTemp } = useWeatherContext();
-  let sunsetHours = new Date(
-    currentTemp?.timezone + currentTemp?.sys?.sunset * 1000
-  ).getHours();
-  const sunsetMinutes = new Date(
-    currentTemp?.timezone + currentTemp?.sys?.sunset * 1000
-  ).getMinutes();
+  let sunset = new Date(
+    (currentTemp?.timezone + currentTemp?.sys?.sunset) * 1000
+  );
 
-  sunsetHours = sunsetHours > 12 ? Math.abs(12 - sunsetHours) : sunsetHours;
-
-  let sunRiseHours = new Date(
-    currentTemp?.timezone + currentTemp?.sys?.sunrise * 1000
-  ).getHours();
-  const sunriseMinutes = new Date(
-    currentTemp?.timezone + currentTemp?.sys?.sunrise * 1000
-  ).getMinutes();
-
-  sunRiseHours = sunRiseHours > 12 ? Math.abs(12 - sunRiseHours) : sunRiseHours;
+  let sunrise = new Date(
+    (currentTemp?.timezone + currentTemp?.sys?.sunrise) * 1000
+  );
 
   return (
     <div className="bg-black/40 py-3 px-4 rounded-2xl mt-3 md:col-span-2 w-full">
@@ -31,12 +21,20 @@ const SunRise = () => {
         <SunriseSetFlex
           img={<IoSunnyOutline size={40} />}
           type={"Sunrise"}
-          value={`${sunRiseHours}:${sunriseMinutes} AM`}
+          value={`${
+            sunrise.getUTCHours() > 12
+              ? Math.abs(12 - sunrise.getUTCHours())
+              : sunrise.getUTCHours()
+          }:${sunrise.getUTCMinutes()} AM`}
         />
         <SunriseSetFlex
           img={<FiMoon size={40} />}
           type={"Sunset"}
-          value={`${sunsetHours}:${sunsetMinutes} PM`}
+          value={`${
+            sunset.getUTCHours() > 12
+              ? Math.abs(12 - sunset.getUTCHours())
+              : sunset.getUTCHours()
+          }:${sunset.getUTCMinutes()} PM`}
         />
       </div>
     </div>

@@ -32,12 +32,9 @@ const Forecast = () => {
     const data = await response.json();
     setForecast(data);
     console.log(forecast);
-    // console.log(date);
   }
 
-  // const dtUnix=forecast?.city?.timezone
-  // const date = new Date();
-  // const date = new Date(19800 + 1714915714 * 1000);
+  // console.log(new Date(19800 + 1715018400 * 1000).getUTCHours());
 
   useEffect(() => {
     fetchData();
