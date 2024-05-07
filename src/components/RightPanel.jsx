@@ -4,9 +4,9 @@ import TodayAt from "./TodayAt";
 
 const RightPanel = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <TodayHighlight />
-      {/* <TodayAt /> */}
+      <TodayAt />
     </div>
   );
 };

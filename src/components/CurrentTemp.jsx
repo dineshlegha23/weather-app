@@ -7,11 +7,11 @@ const CurrentTemp = () => {
   const {
     coordinates,
     currentTemp,
-    setTimeZone,
+    // setTimeZone,
     setCurrentTemp,
     selectedCity,
-    setSunRise,
-    setSunSet,
+    // setSunRise,
+    // setSunSet,
   } = useWeatherContext();
   const { lat, lon } = coordinates;
 
@@ -24,13 +24,16 @@ const CurrentTemp = () => {
   }
 
   const tempDesc = currentTemp?.weather?.[0]?.description;
-  const temp = currentTemp?.main?.temp;
+  let temp = currentTemp?.main?.temp;
   const icon = currentTemp?.weather?.[0]?.icon;
   const location = selectedCity === "" ? "Delhi, In" : selectedCity;
   const currentDate = new Date().toString().substring(0, 10).split(" ");
   const day = currentDate[0];
   const month = currentDate[1];
   const date = currentDate[2];
+
+  temp = String(temp).includes(".") ? temp.toFixed(1) : temp;
+  temp = String(temp).at(-1) === "0" ? temp.slice(0, -2) : temp;
 
   useEffect(() => {
     fetchData();
@@ -43,7 +46,7 @@ const CurrentTemp = () => {
           <p>Now</p>
           <div className="flex justify-between items-center">
             <span className="text-6xl brightness-200">
-              {temp && String(temp).includes(".") ? temp.toFixed(1) : temp}
+              {temp && temp}
               <sup>o</sup>c
             </span>
             <i className="w-16 mx-5">

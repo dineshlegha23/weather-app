@@ -31,11 +31,10 @@ const Forecast = () => {
     );
     const data = await response.json();
     setForecast(data);
-    console.log(forecast);
   }
 
-  const date = new Date(19800 + 1715029200 * 1000).getUTCHours();
-  console.log(date);
+  const date = new Date(19800 + 1715061600 * 1000).getUTCHours();
+  // console.log(date);
 
   useEffect(() => {
     fetchData();
