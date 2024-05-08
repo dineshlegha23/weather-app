@@ -1,26 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CiCalendar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import { useWeatherContext } from "../context/context";
 
 const CurrentTemp = () => {
-  const {
-    coordinates,
-    currentTemp,
-    // setTimeZone,
-    setCurrentTemp,
-    selectedCity,
-    // setSunRise,
-    // setSunSet,
-  } = useWeatherContext();
+  const { coordinates, currentTemp, setCurrentTemp, selectedCity } =
+    useWeatherContext();
+
+  const [loading, setLoading] = useState(false);
+
   const { lat, lon } = coordinates;
 
   async function fetchData() {
+    setLoading(true);
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=1fd671326afdca28081228497ae0615f`
     );
     const data = await response.json();
     setCurrentTemp(data);
+    setLoading(false);
   }
 
   const tempDesc = currentTemp?.weather?.[0]?.description;
@@ -38,6 +36,14 @@ const CurrentTemp = () => {
   useEffect(() => {
     fetchData();
   }, [coordinates]);
+
+  if (loading) {
+    return (
+      <div className="bg-black/80 grid place-items-center w-screen h-screen fixed z-10 top-0 left-0">
+        <div className="h-20 w-20 animate-spin border-t-8 rounded-full border-white"></div>
+      </div>
+    );
+  }
 
   return (
     <section>
