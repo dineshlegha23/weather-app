@@ -20,11 +20,11 @@ const HourlyForecast = ({ timezone, date, temp, img, rotation, speed }) => {
   const hours = convertHours(date.getUTCHours());
 
   return (
-    <div className="rounded-xl flex flex-col gap-3">
+    <div className="rounded-xl flex flex-col gap-3 min-w-28">
       <div className="flex flex-col bg-gray py-2 px-4 rounded-xl items-center">
         <p>{hours}</p>
         <img
-          className="w-16"
+          className="w-14 py-1"
           src={`/images/weather_icons/${img}.png`}
           alt="cloud logo"
         />
