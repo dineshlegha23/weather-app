@@ -86,7 +86,7 @@ const Navbar = () => {
         </div>
       </div>
       {mobileSearch && (
-        <div className="bg-black/100 fixed z-10 top-0 left-0 w-screen h-screen">
+        <div className="animate-[bounced_0.5s] bg-black/100 fixed z-10 top-0 left-0 w-screen h-screen">
           <div className="flex items-start mt-1 justify-center">
             <button
               className="py-3 px-5 bg-gray rounded-full mr-2 ml-1 cursor-pointer"
@@ -94,11 +94,10 @@ const Navbar = () => {
             >
               &lt;
             </button>
-            <div className="flex flex-col w-[90%] mr-16">
+            <div className="animate-[bounced_0.5s] flex flex-col w-[90%] mr-16">
               <input
                 className={`pl-9 py-[10px] bg-gray text-white outline-none w-full px-2 rounded-full  ${
-                  touched &&
-                  cities.length > 0 &&
+                  (touched || cities.length > 0) &&
                   "rounded-none rounded-t-[18px]"
                 }`}
                 placeholder="Enter city name..."

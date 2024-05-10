@@ -18,6 +18,10 @@ export default {
           "50%": { transform: "scale(10)", opacity: 0.5 },
           "100%": { transform: "scale(40)", opacity: 0 },
         },
+        bounced: {
+          "0%": { opacity: 0, height: 0 },
+          "100%": { opacity: "100%", height: "100%" },
+        },
       },
       animation: {
         "ripple-animation": "ripple 1s ease 1 forwards",
