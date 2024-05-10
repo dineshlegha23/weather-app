@@ -79,7 +79,7 @@ const Navbar = () => {
         <IoSearchOutline
           onClick={() => setMobileSearch(true)}
           size={20}
-          className="bg-gray rounded-full p-3 w-12 h-12"
+          className="bg-gray rounded-full p-3 w-12 h-12 cursor-pointer"
         />
         <div className="flex items-center relative gap-3 bg-[#B5A1D9] rounded-full py-[6px] px-3 cursor-pointer md:p-1">
           <FaLocationCrosshairs className="md:p-2 w-10 h-10" />
@@ -89,15 +89,16 @@ const Navbar = () => {
         <div className="bg-black/100 fixed z-10 top-0 left-0 w-screen h-screen">
           <div className="flex items-start mt-1 justify-center">
             <button
-              className="py-3 px-5 bg-gray rounded-full mr-2 ml-1"
+              className="py-3 px-5 bg-gray rounded-full mr-2 ml-1 cursor-pointer"
               onClick={() => setMobileSearch(false)}
             >
               &lt;
             </button>
             <div className="flex flex-col w-[90%] mr-16">
               <input
-                className={`pl-9 py-[10px] bg-gray text-white outline-none w-full px-2 rounded-full focus:rounded-none focus:rounded-t-[18px] ${
-                  (touched || cities.length > 0) &&
+                className={`pl-9 py-[10px] bg-gray text-white outline-none w-full px-2 rounded-full  ${
+                  touched &&
+                  cities.length > 0 &&
                   "rounded-none rounded-t-[18px]"
                 }`}
                 placeholder="Enter city name..."
@@ -109,8 +110,12 @@ const Navbar = () => {
               />
               {cities && (
                 <ul
-                  className={`w-full shadow-[0px_10px_20px_black] z-10  flex flex-col bg-gray rounded-b-xl  ${
-                    touched || cities.length > 0 ? "border-t-[1px]" : ""
+                  className={`w-full ${
+                    touched &&
+                    cities.length > 0 &&
+                    "shadow-[0px_10px_20px_black]"
+                  } z-10  flex flex-col bg-gray rounded-b-xl  ${
+                    touched && cities.length > 0 ? "border-t-[1px]" : ""
                   } border-white/50`}
                 >
                   {cities.map((city, index) => (
