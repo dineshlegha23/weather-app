@@ -23,7 +23,7 @@ const Navbar = () => {
     if (city.length != 0) {
       const time = setTimeout(() => {
         fetchData();
-      }, 500);
+      }, 300);
       return () => clearTimeout(time);
     }
   }, [city]);
@@ -37,12 +37,12 @@ const Navbar = () => {
         {touched && (
           <div
             onClick={() => setTouched(false)}
-            className="fixed w-screen h-screen"
+            className="fixed top-0 left-0 w-screen h-screen"
           ></div>
         )}
-        <IoSearchOutline className="absolute top-[8px] ml-2" size={20} />
+        <IoSearchOutline className="absolute top-[10px] ml-2" size={20} />
         <input
-          className="md:hidden pl-9 py-[6px] bg-gray text-white outline-none w-[350px] px-2 rounded-full md:w-auto focus:rounded-none focus:rounded-t-[18px]"
+          className="md:hidden pl-10 py-[8px] bg-gray text-white outline-none w-[350px] px-2 rounded-full md:w-auto focus:rounded-none focus:rounded-t-[18px]"
           placeholder="Enter city name..."
           type="text"
           value={city}
@@ -145,8 +145,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
-      <div className="flex items-center relative gap-3 bg-[#B5A1D9] rounded-full py-[6px] px-3 cursor-pointer md:hidden">
-        <FaLocationCrosshairs className="relative md:p-1 w-8 h-8" />
+      <div className="flex items-center relative gap-3 bg-[#B5A1D9] hover:bg-gray transition-all rounded-full py-[6px] px-3 cursor-pointer md:hidden">
+        <FaLocationCrosshairs className="relative md:p-1 w-6 h-6" />
         <button>Current Location</button>
       </div>
     </nav>
