@@ -36,7 +36,7 @@ const HourlyForecast = ({ timezone, date, temp, img, rotation, speed }) => {
       <div className="flex flex-col bg-gray py-2 px-5 rounded-xl items-center">
         <p>{hours}</p>
         <img
-          className={`[rotate:${360 - rotation}deg]`}
+          style={{ transform: `rotate(${rotation - 180}deg)` }}
           src={`/images/weather_icons/direction.png`}
           alt="wind direction logo"
         />
