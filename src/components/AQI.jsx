@@ -6,13 +6,22 @@ import { useWeatherContext } from "../context/context";
 const AQI = () => {
   const { coordinates } = useWeatherContext();
   const { lat, lon } = coordinates;
+  const [aqi, setAqi] = useState("");
   const [aqiData, setAqiData] = useState([]);
+  const aqiText = {
+    1: { text: "Good", color: "bg-green-600" },
+    2: { text: "Fair", color: "bg-yellow-700" },
+    3: { text: "Moderate", color: "bg-orange-400" },
+    4: { text: "Poor", color: "bg-orange-700" },
+    5: { text: "Very Poor", color: "bg-red-700" },
+  };
 
   const fetchData = async () => {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&units=metric&appid=1fd671326afdca28081228497ae0615f`
     );
     const data = await response.json();
+    setAqi(data.list[0].main.aqi);
     setAqiData(data.list[0].components);
   };
 
@@ -24,8 +33,8 @@ const AQI = () => {
     <div className="bg-black/40 py-3 px-4 rounded-2xl mt-3 md:col-span-2">
       <div className="flex justify-between text-sm">
         <p className="text-white/50">Air Quality Index</p>
-        <span className="bg-yellow-300 text-black py-[1px] px-4 rounded-full">
-          Fair
+        <span className={`${aqiText[aqi]?.color} py-[1px] px-4 rounded-full`}>
+          {aqiText[aqi]?.text}
         </span>
       </div>
       <div className="flex items-center gap-5">

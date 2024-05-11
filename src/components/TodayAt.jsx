@@ -7,7 +7,7 @@ const TodayAt = () => {
   const { forecast } = useWeatherContext();
   const timezone = forecast?.city?.timezone;
   const list = forecast?.list.slice(0, 8);
-  console.log(list);
+
   return (
     <div className="my-5">
       <p>Today at</p>
